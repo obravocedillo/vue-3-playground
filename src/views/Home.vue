@@ -1,18 +1,25 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="home-main-container">
+    <h1>Lista de todos los pokemons</h1>
+    <div v-for="singlePokemon of pokemons" v-bind:key="singlePokemon.url">
+      {{singlePokemon.name}}
+    </div>
   </div>
 </template>
 
 <script lang="ts">
+import { Pokemon } from '../interfaces/Pokemons'
 import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-
 export default defineComponent({
   name: 'Home',
   components: {
-    HelloWorld,
   },
+  mounted(){
+  }, 
+  computed: {
+    pokemons(): Pokemon[] {
+      return this.$store.state.pokemons
+    }
+  }
 });
 </script>
