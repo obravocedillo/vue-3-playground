@@ -3,11 +3,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted } from 'vue';
+import { useStore } from 'vuex';
 export default defineComponent({
-  async mounted(){
-    await this.$store.dispatch('GETPOKEMONS')
-  }
+  setup(){
+    onMounted(async ()=>{
+      let store = useStore()
+      await store.dispatch('GETPOKEMONS');
+    })
+  } 
 })
 </script>
 

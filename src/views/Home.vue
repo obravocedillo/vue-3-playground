@@ -9,17 +9,18 @@
 
 <script lang="ts">
 import { Pokemon } from '../interfaces/Pokemons'
-import { defineComponent } from 'vue';
+import { computed, defineComponent, onMounted } from 'vue';
+import { useStore } from 'vuex';
 export default defineComponent({
   name: 'Home',
   components: {
   },
-  mounted(){
-  }, 
-  computed: {
-    pokemons(): Pokemon[] {
-      return this.$store.state.pokemons
-    }
-  }
+  setup(){
+    let store = useStore()
+    const pokemons = computed(():Pokemon[] => store.getters.POKEMONS);
+    return {
+      pokemons
+    };  
+  } 
 });
 </script>
