@@ -26,6 +26,9 @@ export const store = createStore<State>({
   actions: {
     GETPOKEMONS: async(context,payload)=>{
       let getPokemons = await axios.get('https://pokeapi.co/api/v2/pokemon')
+      getPokemons.data.results.map((singlePokemon:Pokemon, index:number) => {
+        singlePokemon.image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index+1}.png`
+      })
       context.commit("SET_POKEMONS",getPokemons.data.results as Pokemon[])
     }
   },
