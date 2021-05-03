@@ -7,7 +7,7 @@ import { defineComponent, onMounted } from 'vue';
 import { useStore } from 'vuex';
 export default defineComponent({
   setup(){
-    onMounted(async ()=>{
+    onMounted(async () => {
       let store = useStore()
       await store.dispatch('GETPOKEMONS');
     })

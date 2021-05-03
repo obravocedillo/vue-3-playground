@@ -16,6 +16,15 @@ describe('Home view tests', () => {
             }
         });
         expect(wrapper.find('[data-testid="home-title"]').exists()).toBe(true);
-    })
+    });
+    
+    test('Testing home pokemon images are rendering according to store', () => {
+        const wrapper = mount(Home, {
+            global: {
+                plugins: [store]
+            }
+        });
+        expect(wrapper.findAll('[data-testid="single-pokemon"]').length).toBe(0);
+    });
 })
 
