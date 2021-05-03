@@ -1,6 +1,6 @@
 <template>
   <div class="home-main-container">
-    <h1>Lista de todos los pokemons</h1>
+    <h1 data-testid="home-title">Lista de todos los pokemons</h1>
     <div class="home-all-pokemons-container">
       <div v-for="singlePokemon of pokemons" :key="singlePokemon.url" class="home-single-pokemon">
         <img :src="singlePokemon.image" :alt="`${singlePokemon.name} image`">
