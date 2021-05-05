@@ -4,7 +4,13 @@ import { createStore } from 'vuex'
 
 const store = createStore({
     getters:{
-        POKEMONS: () => { return [] },
+        POKEMONS: () => { return [
+            {
+                image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+                name: "bulbasaur",
+                url: "https://pokeapi.co/api/v2/pokemon/1/",
+            }
+        ] },
     }
 })
 
@@ -24,7 +30,7 @@ describe('Home view tests', () => {
                 plugins: [store]
             }
         });
-        expect(wrapper.findAll('[data-testid="single-pokemon"]').length).toBe(0);
+        expect(wrapper.findAll('[data-testid="single-pokemon"]').length).toBe(1);
     });
 })
 
