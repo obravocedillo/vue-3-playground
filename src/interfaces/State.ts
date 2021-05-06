@@ -1,4 +1,4 @@
-import { Pokemon } from './Pokemons'
+import { Pokemon } from './Pokemons';
 
 export interface State{
     pokemons:Pokemon[]

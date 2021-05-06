@@ -5,14 +5,15 @@
 <script lang="ts">
 import { defineComponent, onMounted } from 'vue';
 import { useStore } from 'vuex';
+
 export default defineComponent({
-  setup(){
+  setup() {
     onMounted(async () => {
-      let store = useStore()
+      const store = useStore();
       await store.dispatch('GETPOKEMONS');
-    })
-  } 
-})
+    });
+  },
+});
 </script>
 
 <style lang="scss">
