@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import { createStore } from 'vuex';
-import Home from '../../views/Home';
+import Home from '../../views/Home.vue';
 
 const store = createStore({
   getters: {

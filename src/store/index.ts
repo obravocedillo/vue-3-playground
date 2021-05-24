@@ -14,10 +14,10 @@ const store = createStore<State>({
     pokemons: [],
   },
   getters: {
-    POKEMONS: (state: State): Pokemon[] => state.pokemons,
+    POKEMONS: (state: State):Pokemon[] => state.pokemons,
   },
   mutations: {
-    SET_POKEMONS: (state, payload) => {
+    SET_POKEMONS: (state, payload):void => {
       state.pokemons = payload;
     },
   },
